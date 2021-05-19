@@ -2,7 +2,7 @@
 <package format="2">
   <name>robotlab_hw</name>
   <version>0.0.0</version>
-  <description>The robotlab_hw package</description>
+  <description>The aim of this project is to develop a new feature for the rb1 robot. The robot visits the selected points and then returns to the charging station.</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
