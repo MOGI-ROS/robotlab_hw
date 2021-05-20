@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="id_robot_a" default="robot" />
+    <include file="$(find rb1_base_gazebo)/launch/rb1_base_gazebo.launch">
+        <!-- arg to config the launch file-->
+        <arg name="launch_rviz" default="true" />
+        <arg name="gazebo_world" default="$(find rb1_base_gazebo)/worlds/rb1_base_office.world" />
+        <arg name="use_ros_planar_move_plugin" default="false" />
+
+        <!-- arguments robot a -->
+        <arg name="launch_robot_a" default="true" />
+        <arg name="has_elevator_robot_a" default="false" />
+        <arg name="x_init_pose_robot_a" default="0.0" />
+        <arg name="y_init_pose_robot_a" default="1.0" />
+        <arg name="z_init_pose_robot_a" default="0.0" />
+        <arg name="init_yaw_robot_a" default="0.0" />
+        <arg name="gmapping_robot_a" default="false" />
+        <arg name="amcl_and_mapserver_robot_a" default="true" />
+        <arg name="map_frame_robot_a" default="$(arg id_robot_a)_map" />
+        <arg name="map_file_robot_a" default="$(find rb1_base_localization)/maps/kavezo/kavezo_map.yaml" />
+        <arg name="move_base_robot_a" default="true" />
+        <arg name="pad_robot_a" default="false" />
+    </include>
+
+    <node pkg="robotlab_hw" name="path_publisher" type="path_publisher.py"></node>
+</launch>
