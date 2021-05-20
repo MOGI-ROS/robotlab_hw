@@ -17,10 +17,13 @@ The homework consist of three main parts:
  - simulation (waypoint looping) [link](https://www.youtube.com/watch?v=a97YtZk537k)
 
 ## Modifications
- - custom map based on the test environment
+ - creating a custom map based on the test environment
 <img src="images/rb1_2.png" width="400" />
- - new 3D model of the robot
- - 
+ - creating a new 3D model of the robot including the upper structure
+<img src="images/rb1_3.png" width="400" />
+ - extending the robot with UH sensors in the simulation environment
+ - creating a new custom node (multi-goal navigation) for the robot
+ - creating an all-in-all launch file for simulating the new node
 
 ## Dependencies (to run the simulation)
 ### Our stuff
