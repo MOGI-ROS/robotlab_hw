@@ -29,9 +29,9 @@ def path_publisher():
     goals = numpy.vstack(
         (base_point,
         table_1,
-        #table_2,
-        #table_6,
-        #table_8,
+        table_2,
+        table_6,
+        table_8,
         base_point)
     )
 
