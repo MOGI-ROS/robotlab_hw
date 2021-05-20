@@ -9,7 +9,7 @@ The homework consist of three main parts:
 ## Results
 ### Images
 <p align="center">
-<img src="images/rb1_1.png" width="300" />
+<img src="images/rb1_1.png" width="800" />
 </p>
 
 ### Videos
@@ -18,6 +18,7 @@ The homework consist of three main parts:
 
 ## Modifications
  - custom map based on the test environment
+<img src="images/rb1_2.png" width="400" />
  - new 3D model of the robot
  - 
 
