@@ -6,6 +6,21 @@ The homework consist of three main parts:
 - we made a custom map for the project based on the test environment the robot is used in
 - we made a custom node that is capable of extending the robot's move_base with basic waypoint navigation
 
+## Results
+### Images
+<p align="center">
+<img src="images/rb1_1.png" width="300" />
+</p>
+
+### Videos
+ - simulation [link](https://www.youtube.com/watch?v=X01jmzssdb0)
+ - simulation (waypoint looping) [link](https://www.youtube.com/watch?v=a97YtZk537k)
+
+## Modifications
+ - custom map based on the test environment
+ - new 3D model of the robot
+ - 
+
 ## Dependencies (to run the simulation)
 ### Our stuff
 - rb1_base_common (our fork) [link](https://github.com/PhylMacao/rb1_base_common)
