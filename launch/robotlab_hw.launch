@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="loop" default="true" />
     <arg name="id_robot_a" default="robot" />
     <include file="$(find rb1_base_gazebo)/launch/rb1_base_gazebo.launch">
         <!-- arg to config the launch file-->
@@ -22,5 +23,7 @@
         <arg name="pad_robot_a" default="false" />
     </include>
 
-    <node pkg="robotlab_hw" name="path_publisher" type="path_publisher.py"></node>
+    <node pkg="robotlab_hw" name="path_publisher" type="path_publisher.py" output="screen">
+        <param name="loop_path" type="boolean" value="$(arg loop)" />
+    </node>
 </launch>

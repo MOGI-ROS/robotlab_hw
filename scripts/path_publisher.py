@@ -29,9 +29,9 @@ def path_publisher():
     goals = numpy.vstack(
         (base_point,
         table_1,
-        table_2,
-        table_6,
-        table_8,
+        #table_2,
+        #table_6,
+        #table_8,
         base_point)
     )
 
@@ -39,29 +39,36 @@ def path_publisher():
     rospy.loginfo("Connecting to move_base...")
     client.wait_for_server()
     rospy.loginfo("Connected to move_base.")
+    loop_path = True
+    while loop_path:
+        loop_path = rospy.get_param('~loop_path', False)
+        for i in range(0, goals.shape[0]):
+            goal = MoveBaseGoal()
+            goal.target_pose.header.frame_id = "robot_map"
+            goal.target_pose.header.stamp = rospy.Time.now()
 
-    for i in range(0, goals.shape[0]):
-        goal = MoveBaseGoal()
-        goal.target_pose.header.frame_id = "robot_map"
-        goal.target_pose.header.stamp = rospy.Time.now()
+            goal.target_pose.pose.position.x = goals[i][0]
+            goal.target_pose.pose.position.y = goals[i][1]
+            goal.target_pose.pose.position.z = 0.0
+            goal.target_pose.pose.orientation = Quaternion(*tf.transformations.quaternion_from_euler(0, 0, goals[i][2]))
 
-        goal.target_pose.pose.position.x = goals[i][0]
-        goal.target_pose.pose.position.y = goals[i][1]
-        goal.target_pose.pose.position.z = 0.0
-        goal.target_pose.pose.orientation = Quaternion(*tf.transformations.quaternion_from_euler(0, 0, goals[i][2]))
-
-        rospy.loginfo("Sending goal...")
-        client.send_goal(goal)
-        client.wait_for_result()
-    
-        if client.get_state() == GoalStatus.SUCCEEDED:
-            rospy.loginfo("Goal reached.")
+            rospy.loginfo("Sending goal...")
+            client.send_goal(goal)
+            client.wait_for_result()
+        
+            if client.get_state() == GoalStatus.SUCCEEDED:
+                rospy.loginfo("Goal reached.")
+            else:
+                rospy.loginfo("Failed to reach goal.")
+                rospy.loginfo("Status code: " + str(client.get_state()))
+            rospy.loginfo("Waiting before sending next goal...")
+            rospy.sleep(3)
+        rospy.loginfo("Reached end of goals.")
+        if loop_path:
+            rospy.loginfo("Looping is set to true, restarting from first goal...")
         else:
-            rospy.loginfo("Failed to reach goal.")
-            rospy.loginfo("Status code: " + str(client.get_state()))
-        rospy.loginfo("Waiting before sending next goal...")
-        rospy.sleep(3)
-    rospy.loginfo("Reached end of goals.")
+            rospy.loginfo("Looping is set to false, exiting...")
+            break
 
 
 if __name__ == '__main__':
