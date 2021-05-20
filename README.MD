@@ -23,13 +23,18 @@ In the workspace install the packages dependencies:
   ```
 
 ## How to run project
-Launch the modified rb-1 base simulation.
+You can run the project with the following command:
+```bash
+roslaunch robotlab_hw robotlab_hw.launch
+```
+if you don't want looping you can add `loop:=false`
 
+You can launch the modified rb-1 base simulation.
 ```bash
 roslaunch rb1_base_sim_bringup rb1_base_complete.launch
 ```
 
-Run the path_publisher node manually:
+And then run the path_publisher node manually:
 ```bash
 rosrun robotlab_hw path_publisher.py
 ```
