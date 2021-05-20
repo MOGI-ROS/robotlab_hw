@@ -20,10 +20,18 @@ def path_publisher():
     base_point = numpy.array([[-7.5, 3.1, pi]])
     table_1 = numpy.array([[-5.5, 2.1, pi/2]])
     table_2 = numpy.array([[-3.75, 2.1, pi/2]])
+    table_3 = numpy.array([[-2.8, 2.1, pi/2]])
+    table_4 = numpy.array([[-1.1, 2.1, pi/2]])
+    table_5 = numpy.array([[-5.1, 0.9, 3*pi/2]])
+    table_6 = numpy.array([[-3.1, 0.9, 3*pi/2]])
+    table_7 = numpy.array([[-1.45, 0.9, 3*pi/2]])
+    table_8 = numpy.array([[0.5, 0.9, 3*pi/2]])
     goals = numpy.vstack(
         (base_point,
         table_1,
         table_2,
+        table_6,
+        table_8,
         base_point)
     )
 
