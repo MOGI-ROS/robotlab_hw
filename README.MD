@@ -32,10 +32,26 @@ The homework consist of three main parts:
 - rb1_base_sim (our fork) [link](https://github.com/PhylMacao/rb1_base_sim)
 
 ### Original robotnik packages
+- robotnik_sensors [link](https://github.com/RobotnikAutomation/robotnik_sensors)
+```
+git clone -b melodic-devel https://github.com/RobotnikAutomation/robotnik_sensors
+```
+- robotnik_msgs [link](https://github.com/RobotnikAutomation/robotnik_msgs)
+```
+git clone https://github.com/RobotnikAutomation/robotnik_msgs
+```
+
+### Additional packages
+```
+sudo apt install ros-melodic-mavros-msgs
+sudo apt install ros-melodic-robot-localization
+sudo apt install ros-melodic-imu-complementary-filter
+```
+
+### Additional packages that may not needed
 - robot_localization_utils [link](https://github.com/RobotnikAutomation/robot_localization_utils)
 - robotnik_base_hw_sim [link](https://github.com/RobotnikAutomation/robotnik_base_hw_sim)
-- robotnik_sensors [link](https://github.com/RobotnikAutomation/robotnik_sensors)
-- robotnik_msgs [link](https://github.com/RobotnikAutomation/robotnik_msgs)
+
 
 In the workspace install the packages dependencies:
   ```bash
