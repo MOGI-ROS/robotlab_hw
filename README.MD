@@ -23,6 +23,7 @@ The homework consist of three main parts:
  - <img src="images/rb1_3.png" width="400" />
  - extending the robot with UH sensors in the simulation environment
  - creating a new custom node (multi-goal navigation) for the robot
+ - creating simulations to test the functions of the robot in the test environment
  - creating an all-in-all launch file for simulating the new node
 
 ## Dependencies (to run the simulation)
